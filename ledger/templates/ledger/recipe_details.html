@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Recipe Book</title>
+    <style>
+        body {
+            li {
+                list-style-type: none;
+                padding: 0;
+            }
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Book</h1>
+    <h2>{{ recipe.name }}</h2>
+    <p>
+        {% for ingredient in recipe.ingredients %}
+        <li>
+            {{ ingredient.name }}: {{ ingredient.quantity }}
+        </li>
+        {% endfor %}
+    </p>
+</body>
+</html>
