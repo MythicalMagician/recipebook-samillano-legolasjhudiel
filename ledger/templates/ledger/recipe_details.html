@@ -16,9 +16,9 @@
     <h1>Recipe Book</h1>
     <h2>{{ recipe.name }}</h2>
     <p>
-        {% for ingredient in recipe.ingredients %}
+        {% for recipe_ingredient in recipe.ingredients.all %}
         <li>
-            {{ ingredient.name }}: {{ ingredient.quantity }}
+            {{ recipe_ingredient.ingredient.name }}: {{ recipe_ingredient.quantity }}
         </li>
         {% endfor %}
     </p>

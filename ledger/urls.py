@@ -6,12 +6,14 @@ It displays parts of the recipe list based on recipe # for recipes 1 and 2.
 """
 
 from django.urls import path
-from .views import recipe_list, recipe_page
+
+from .views import RecipeListView, RecipeDetailView
+
 
 app_name = 'ledger'
 
+
 urlpatterns = [
-    path('recipes/list/', recipe_list, name="recipes"),
-    path('recipe/1/', recipe_page, {'recipe_index': 0}, name="Recipe 1"),
-    path('recipe/2/', recipe_page, {'recipe_index': 1}, name="Recipe 2")
+    path('recipes/list/', RecipeListView.as_view(), name="recipe_list"),
+    path('recipe/<int:pk>/', RecipeDetailView.as_view(), name="recipe_details"),
 ]
