@@ -1,0 +1,6 @@
+# Ignore these files for commits to version control
+myenv/
+.env
+__pycache__/
+*.py[cod]
+db.sqlite3
