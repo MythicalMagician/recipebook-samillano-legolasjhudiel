@@ -1,5 +1,5 @@
 # ledger/views.py
-"""Returns views of the homepage, recipe list, and recipe pages."""
+"""Views displaying the homepage and recipes."""
 
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView

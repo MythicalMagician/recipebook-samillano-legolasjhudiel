@@ -1,9 +1,5 @@
 # ledger/urls.py
-"""
-Defines namespace, ledger, and matches views to corresponding URLs.
-
-It displays parts of the recipe list based on recipe # for recipes 1 and 2.
-"""
+"""Defines namespace (ledger) and matches views to corresponding URLs."""
 
 from django.urls import path
 
