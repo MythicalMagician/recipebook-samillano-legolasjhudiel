@@ -1,4 +1,6 @@
 # ledger/views.py
+"""Returns views of the homepage, recipe list, and recipe pages."""
+
 from django.shortcuts import render
 
 context = {
@@ -68,12 +70,17 @@ context = {
 
 
 def recipe_list(request):
+    """Return a view of the names of recipes in the recipe list."""
     recipes = context
     return render(request, 'ledger/recipe_list.html', {'recipes': recipes})
 
+
 def recipe_page(request, recipe_index):
+    """Return a view displaying the content of a recipe from the list."""
     recipe = context["recipes"][recipe_index]
     return render(request, 'ledger/recipe_details.html', {'recipe': recipe})
 
+
 def ledger_homepage(request):
+    """Return a view of the homepage."""
     return render(request, 'ledger/homepage.html')
