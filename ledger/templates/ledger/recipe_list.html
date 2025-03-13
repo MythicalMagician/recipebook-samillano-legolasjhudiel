@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <title>Recipe Book</title>
+{% extends "base.html" %}
+
+{% block title %}Recipe Book - Recipes{% endblock %}
+
+{% block styles %}
     <style>
         body {
             list-style-type: none;
             text-align: center;
         }
     </style>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <h1>Recipe Book</h1>
     <h2>Recipes</h2>
     <p>
@@ -18,5 +20,4 @@
         {% endfor %}
     </p>
     <img  src="https://i.pinimg.com/736x/7b/d2/4a/7bd24ad2aab61f8c81fb590dbf087cad.jpg"  alt=""  /> 
-</body>
-</html>
+{% endblock %}

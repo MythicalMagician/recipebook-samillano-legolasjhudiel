@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <title>Recipe Book</title>
+{% extends "base.html" %}
+
+{% block title %}Recipe Book - {{recipe.name}}{% endblock %}
+
+{% block styles %}
     <style>
         body {
             li {
@@ -11,8 +12,9 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <h1>Recipe Book</h1>
     <h2>{{ recipe.name }}</h2>
     <p>
@@ -22,5 +24,4 @@
         </li>
         {% endfor %}
     </p>
-</body>
-</html>
+{% endblock %}
