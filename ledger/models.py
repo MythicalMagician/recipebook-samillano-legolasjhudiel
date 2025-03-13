@@ -7,7 +7,6 @@ from django.urls import reverse
 
 
 class Ingredient(models.Model):
-    """"""
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -18,8 +17,10 @@ class Ingredient(models.Model):
 
 
 class Recipe(models.Model):
-    """"""
     name = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -29,7 +30,6 @@ class Recipe(models.Model):
     
 
 class RecipeIngredient(models.Model):
-    """"""
     quantity = models.CharField(max_length=100)
 
     ingredient = models.ForeignKey(
