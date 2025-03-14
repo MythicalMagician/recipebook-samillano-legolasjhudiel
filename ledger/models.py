@@ -1,9 +1,10 @@
 # ledger/models.py
-"""
-"""
+"""Classes for recipes and their ingredients."""
 
 from django.db import models
 from django.urls import reverse
+
+from users.models import Profile
 
 
 class Ingredient(models.Model):
@@ -18,7 +19,10 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
-    author = models.CharField(max_length=50)
+    author = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 

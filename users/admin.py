@@ -8,13 +8,13 @@ from django.contrib.auth.models import User
 from .models import Profile
 
 
-class ProfileInLine(admin.StackedInLine):
+class ProfileInLine(admin.StackedInline):
     """"""
     model = Profile
     can_delete = False
 
 
-class UserAdmin(admin.BaseUserAdmin):
+class UserAdmin(BaseUserAdmin):
     """"""
     inlines = [ProfileInLine,]
 

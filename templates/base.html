@@ -7,6 +7,16 @@
         {% endblock %}
     </head>
     <body>
+        {% if request.user.is_authenticated %}
+            <p>Logged in as: {{request.user.profile.name}}</p>
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Logout</button>
+                </form>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
         {% block content %}
         {% endblock %}
     </body>
