@@ -15,7 +15,6 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Recipe Book</h1>
     <h2>{{ recipe.name }}</h2>
     <p>
         {% for recipe_ingredient in recipe.ingredients.all %}

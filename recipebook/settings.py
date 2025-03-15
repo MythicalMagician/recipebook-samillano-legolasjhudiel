@@ -122,7 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-LOGIN_REDIRECT_URL = '/recipes/list'
+LOGIN_URL = '/users/login/'
+LOGIN_REDIRECT_URL = '/recipes/list/'
 LOGOUT_REDIRECT_URL = '/users/login/'
 
 # Default primary key field type
