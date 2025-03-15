@@ -4,7 +4,7 @@
 from django.db import models
 from django.urls import reverse
 
-from users.models import Profile
+from accounts.models import Profile
 
 
 class Ingredient(models.Model):
