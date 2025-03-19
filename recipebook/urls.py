@@ -1,4 +1,15 @@
 # recipebook/urls.py
+"""
+URL config for Recipe Book.
+
+Redirects to the Recipe List from root URL.
+
+Matches URLs with views:
+- Ledger app (recipe list and recipes)
+- Accounts for logging in
+- Admin page
+"""
+
 from django.contrib import admin
 from django.urls import include, path
 

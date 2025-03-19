@@ -10,16 +10,20 @@ from .models import Recipe
 
 
 class RecipeListView(ListView):
+    """View for recipe list."""
+
     model = Recipe
     template_name = 'ledger/recipe_list.html'
     context_object_name = 'recipes'
 
 
 class RecipeDetailView(LoginRequiredMixin, DetailView):
+    """View for recipe. Requires login."""
+
     model = Recipe
     template_name = 'ledger/recipe_details.html'
 
 
 def redirect_homepage(request):
-    """Redirect to the recipe list from :8000"""
+    """Redirects to the recipe list from root URL."""
     return redirect('ledger:recipe_list')

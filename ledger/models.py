@@ -8,16 +8,27 @@ from accounts.models import Profile
 
 
 class Ingredient(models.Model):
+    """
+    Ingredient model.
+
+    Has a name for the ingredient (100 characters max).
+    """
+
     name = models.CharField(max_length=100)
 
     def __str__(self):
+        """Return name string."""
         return self.name
-    
-    def get_absolute_url(self):
-        return reverse('ledger:recipe_details', args=[self.pk])
 
 
 class Recipe(models.Model):
+    """
+    Recipe model.
+
+    Each recipe instance has a name, author, and
+    two dates for creation and most recent update.
+    """
+
     name = models.CharField(max_length=100)
     author = models.ForeignKey(
         Profile,
@@ -27,13 +38,22 @@ class Recipe(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """Return name string."""
         return self.name
-    
+
     def get_absolute_url(self):
+        """Link to recipe page on admin interface."""
         return reverse('ledger:recipe_details', args=[self.pk])
-    
+
 
 class RecipeIngredient(models.Model):
+    """
+    RecipeIngredient model.
+
+    Provides detail on amount of an ingredient
+    to be used in a recipe.
+    """
+
     quantity = models.CharField(max_length=100)
 
     ingredient = models.ForeignKey(
